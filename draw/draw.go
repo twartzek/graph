@@ -14,7 +14,7 @@ import (
 // ToDo: This template should be simplified and split into multiple templates.
 const dotTemplate = `strict {{.GraphType}} {
 {{range $k, $v := .Attributes}}
-	{{$k}}="{{$v}}";
+	{{$k}}={{$v}};
 {{end}}
 {{range $s := .Statements}}
 	"{{.Source}}" {{if .Target}}{{$.EdgeOperator}} "{{.Target}}" [ {{range $k, $v := .EdgeAttributes}}{{$k}}="{{$v}}", {{end}} weight={{.EdgeWeight}} ]{{else}}[ {{range $k, $v := .SourceAttributes}}{{$k}}="{{$v}}", {{end}} weight={{.SourceWeight}} ]{{end}};
